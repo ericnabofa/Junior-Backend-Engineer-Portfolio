@@ -194,4 +194,4 @@ Navigate to each project's folder for more details and instructions.
 ## **📞 Contact**  
 
 **Oghenevwegba Eric Nabofa**  
-- **LinkedIn:** [linkedin.com/in/oghenevwegba-eric-nabofa](https://www.linkedin.com/in/oghenevwegbaenabofa/)  
+- **LinkedIn:** [linkedin.com/in/oghenevwegbaenabofa](https://www.linkedin.com/in/oghenevwegbaenabofa/)  
