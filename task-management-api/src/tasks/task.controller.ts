@@ -23,19 +23,20 @@ export const createTask = async (req: Request, res: Response) => {
   }
 };
 
-// Get all tasks for the user
-export const getTasks = async (req: Request, res: Response) => {
-  try {
-    const tasks = await prisma.task.findMany({
-      where: { userId: req.userId }, // Filter tasks by user
-    });
-
-    res.status(200).json(tasks);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Server error' });
-  }
-};
+// Get all tasks for the user or all tasks for admins
+export const getTasks = async (req: Request, res: Response): Promise<void> => {
+    try {
+      const tasks = await prisma.task.findMany({
+        where: req.role === 'admin' ? {} : { userId: req.userId }, // Admins can view all tasks
+      });
+  
+      res.status(200).json(tasks);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Server error' });
+    }
+  };
+  
 
 // Update Task
 export const updateTask = async (req: Request, res: Response) => {
